@@ -41,24 +41,28 @@ positive_number exec_worker(positive_number num, void * memory) {
     return exec_worker(res, memory) * exec_worker(num / res, memory);
 }
 
-positive_number exec(const char * str, void * memory) {
-    double t = microtime();
-    printf("%s = ", str); fflush(stdout);
+positive_number exec(const char *str, void *memory, int time) {
+    double t;
+    if (time) t = microtime();
+    printf("%s = ", str);
+    fflush(stdout);
     positive_number res = exec_worker(from_string_128_bits(str), memory);
-    printf("1 took %.1fs\n", microtime() - t);
-    return res ;
+    printf("1");
+    if (time) printf(" took %.1fs", microtime() - t);
+    putchar('\n');
+    return res;
 }
 
 int main(int argc, char *argv[]) {
     void *memory = malloc(1 << 25);
     if (argc == 2)
-        exec(argv[1], memory);
+        exec(argv[1], memory, 0);
     else {
-        exec("170141183460469231731687303715506697937", memory);
-        exec("8243928541348384902759309418206720079", memory);
-        exec("159764310524856141862111460773005043181", memory);
-        exec("121379895327603193205768410338836433331", memory);
-        exec("128852603101275256030280062065703483477", memory);
+        exec("170141183460469231731687303715506697937", memory, 1);
+        exec("8243928541348384902759309418206720079", memory, 1);
+        exec("159764310524856141862111460773005043181", memory, 1);
+        exec("121379895327603193205768410338836433331", memory, 1);
+        exec("128852603101275256030280062065703483477", memory, 1);
     }
     free(memory);
 }
