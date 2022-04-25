@@ -35,7 +35,7 @@ You must have an integer mode wide enough to hold 128 bits, and be able to :
 #include <stdint.h>
 #include <math.h>
 ```
-Also if you want to run the `main.c` you must :
+Also if you want to run the `main.c` you must be able to :
 ```c
 #include <stdio.h>
 #include <sys/time.h>
