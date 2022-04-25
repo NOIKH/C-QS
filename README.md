@@ -3,7 +3,7 @@ Quadratic Sieve C implementation using [128-bit GCC extension](https://gcc.gnu.o
 The source code is free and voluntarily obfuscated, if you want to appropriate the airy version you have to ask.
 
 # Description
-The software (integer factorization calculator) computes prime factors of a natural number.
+The ~350 lines C software (integer factorization calculator) computes prime factors of a natural number.
 
 # Algorithms in use
 - Miller Rabin primality check
