@@ -4,7 +4,7 @@ The source code is free and voluntarily obfuscated, if you want to appropriate t
 
 # Description
 The ~350 lines C software (integer factorization calculator) computes prime factors of a natural number up to 127-bit.\
-This software is classified as a game, it's not well suited for professional use, of course because not tested.
+This software is classified as a game, it's not well suited for professional use, of course because it's not tested.
 
 # Algorithms in use
 - Miller Rabin primality check
