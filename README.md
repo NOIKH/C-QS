@@ -1,5 +1,5 @@
 # Quadratic Sieve implementation in C
-Quadratic Sieve C implementation using 128-bit GCC extension, without GMP, working on Windows.\
+Quadratic Sieve C implementation using [128-bit GCC extension](https://gcc.gnu.org/onlinedocs/gcc-4.8.1/gcc/_005f_005fint128.html), without GMP, working on Windows.\
 The source code is free and voluntarily obfuscated, if you want to appropriate the airy version you have to ask.
 
 # Description
@@ -18,3 +18,17 @@ The software (integer factorization calculator) computes prime factors of a natu
 121379895327603193205768410338836433331  = 13890724788103667879 * 8738197407204819989        took 103.0s
 128852603101275256030280062065703483477  = 8097364655504413063 * 15912906060576640579        took 182.4s
 ```
+# Requirements
+You must have an integer mode wide enough to hold 128 bits, and be able to include : 
+```c
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+```
+To run the main (demo) :
+```c
+#include <stdio.h>
+#include <sys/time.h>
+```
+
+Thank You.
