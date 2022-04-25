@@ -28,14 +28,14 @@ This is presented in the `main.c` demo.
 128852603101275256030280062065703483477  = 8097364655504413063 * 15912906060576640579        took 182.4s
 ```
 # Requirements
-You must have an integer mode wide enough to hold 128 bits, and be able to include : 
+You must have an integer mode wide enough to hold 128 bits, and be able to : 
 ```c
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 #include <math.h>
 ```
-To run the main (demo) :
+Also if you want to run the `main.c` you must :
 ```c
 #include <stdio.h>
 #include <sys/time.h>
