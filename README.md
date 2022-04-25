@@ -17,7 +17,7 @@ The ~350 lines C software (integer factorization calculator) computes prime fact
 - You can convert a string to a 128-bit integer using the **from_string_128_bits** function.
 - You can print a 128-bit integer as a string using the **to_string_128_bits** function (string must be freed after usage).
 
-This is presented in the `main.c` (demo).
+This is presented in the `main.c` demo.
 
 # Example output
 ```c
