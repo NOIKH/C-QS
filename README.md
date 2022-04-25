@@ -13,9 +13,11 @@ The ~350 lines C software (integer factorization calculator) computes prime fact
 # factor
 
 **factor** function is expecting 2 arguments, a number to factor and 33 Megabyte of malloced memory.\
-**factor** function try to return to you one factor of the given number if it's not a prime.\
-- You can convert a string to a 128-bit integer using the **from_string_128_bits** function.\
+**factor** function try to return to you one factor of the given number if it's not a prime.
+- You can convert a string to a 128-bit integer using the **from_string_128_bits** function.
 - You can print a 128-bit integer as a string using the **to_string_128_bits** function (string must be freed after usage).
+
+This is presented in the `main.c` (demo).
 
 # Example output
 ```c
