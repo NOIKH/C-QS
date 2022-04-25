@@ -49,12 +49,16 @@ positive_number exec(const char * str, void * memory) {
     return res ;
 }
 
-int main(void) {
-    void * memory = malloc(1 << 25);
-    exec("170141183460469231731687303715506697937", memory);
-    exec("8243928541348384902759309418206720079", memory);
-    exec("159764310524856141862111460773005043181", memory);
-    exec("121379895327603193205768410338836433331", memory);
-    exec("128852603101275256030280062065703483477", memory);
+int main(int argc, char *argv[]) {
+    void *memory = malloc(1 << 25);
+    if (argc == 2)
+        exec(argv[1], memory);
+    else {
+        exec("170141183460469231731687303715506697937", memory);
+        exec("8243928541348384902759309418206720079", memory);
+        exec("159764310524856141862111460773005043181", memory);
+        exec("121379895327603193205768410338836433331", memory);
+        exec("128852603101275256030280062065703483477", memory);
+    }
     free(memory);
 }
