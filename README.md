@@ -23,6 +23,7 @@ You must have an integer mode wide enough to hold 128 bits, and be able to inclu
 ```c
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #include <math.h>
 ```
 To run the main (demo) :
