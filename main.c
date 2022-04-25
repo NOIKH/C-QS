@@ -42,7 +42,7 @@ positive_number exec_worker(positive_number num, void * memory) {
 }
 
 positive_number exec(const char *str, void *memory, int time) {
-    double t;
+    double t = 0;
     if (time) t = microtime();
     printf("%s = ", str);
     fflush(stdout);
