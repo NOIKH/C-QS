@@ -10,6 +10,13 @@ The ~350 lines C software (integer factorization calculator) computes prime fact
 - Pollard Rho factorization
 - Quadratic Sieve factorization
 
+# factor
+
+**factor** function is expecting 2 arguments, a number to factor and 33 Megabyte of malloced memory.\
+**factor** function try to return to you one factor of the given number if it's not a prime.\
+- You can convert a string to a 128-bit integer using the **from_string_128_bits** function.\
+- You can print a 128-bit integer as a string using the **to_string_128_bits** function (string must be freed after usage).
+
 # Example output
 ```c
 170141183460469231731687303715506697937  = 13602473 * 230287853 * 54315095311400476747373    took 0.1s
