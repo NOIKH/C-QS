@@ -1,5 +1,9 @@
+#ifndef QS_C
+#define QS_C
+
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #include <math.h>
 
 #define CINT_SCALE (1 << 12)
@@ -311,3 +315,5 @@ positive_number factor(const positive_number number, void *memory) {
     }
     return a ;
 }
+
+#endif
