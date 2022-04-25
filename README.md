@@ -4,7 +4,7 @@ The source code is free and voluntarily obfuscated, if you want to appropriate t
 
 # Description
 The ~350 lines C software (integer factorization calculator) computes prime factors of a natural number up to 127-bit.\
-This software is classified as a game, it's not well suited for professional use, of course because it's not laboriously tested.
+This software is classified as a game, it's not well suited for professional use, sure because it's not laboriously tested.
 
 # Algorithms in use
 - Miller Rabin primality check
@@ -16,7 +16,7 @@ This software is classified as a game, it's not well suited for professional use
 **factor** function is expecting 2 arguments, a number to factor and 33 Megabyte of malloced memory.\
 **factor** function try to return to you one factor of the given number if it's not a prime.
 - You can convert a string to a 128-bit integer using the **from_string_128_bits** function.
-- You can print a 128-bit integer as a string using the **to_string_128_bits** function (string must be freed after usage).
+- You can print a 128-bit integer using the **to_string_128_bits** function (string must be freed after usage).
 
 This is presented in the `main.c` demo.
 
