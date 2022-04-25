@@ -31,5 +31,10 @@ To run the main (demo) :
 #include <stdio.h>
 #include <sys/time.h>
 ```
-
+# Compilation
+You can download the files `qs.c` and `main.c` in the same directory then compile + execute :
+```c
+gcc -O3 -std=c99 -Wall -pedantic main.c -lm ;
+./a.out 
+```
 Thank You.
