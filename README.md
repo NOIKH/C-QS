@@ -1,5 +1,5 @@
 # Quadratic Sieve implementation in C
-Quadratic Sieve C99 implementation using [128-bit GCC extension](https://gcc.gnu.org/onlinedocs/gcc-4.8.1/gcc/_005f_005fint128.html), without GMP, working on Windows.\
+Quadratic Sieve C99 implementation using [128-bit GCC extension](https://gcc.gnu.org/onlinedocs/gcc-4.8.1/gcc/_005f_005fint128.html), without GMP, also working on Windows.\
 The source code is free and voluntarily obfuscated, if you want to appropriate the airy version you have to ask.
 
 # Description
