@@ -178,20 +178,20 @@ static inline void *mem_straight(void *ptr) {
     return res;
 }
 
-positive_number factor_rho(positive_number n, size_t count) {
-    size_t a;
-    positive_number b = 0, c, d, e, f;
-    for (a = 0; a < sizeof(positive_number); ((char *) &b)[a++] = (char) rand()); // pick random polynomial
-    c = b %= n;
+positive_number factor_rho(const positive_number n, const size_t scale) {
+    size_t a = -1, b = 2 ;
+    positive_number c, d = 1 + rand(), e, f;
+    c = d %= n;
     do {
-        b = 1 + multiplication_modulo(b, b, n); b *= b != n;
-        c = 1 + multiplication_modulo(c, c, n); c *= c != n;
-        c = 1 + multiplication_modulo(c, c, n); c *= c != n;
-        for (d = n, e = b > c ? b - c : c - b; e; e = d % (f = e), d = f)
-            if (--count == 0)
-                return 1 ;
-    } while (d == 1);
-    return d;
+        if (++a == b) {
+            if (a >= scale) return n ;
+            d = c, b <<= 1, a = 0;
+        }
+        for (e = c, f = c, c = 0; f; f & 1 ? c = (c + e) % n : 0, e = (e << 1) % n, f >>= 1);
+        for (++c, c *= c != n, e = n, f = c > d ? c - d : d - c; (f %= e) && (e %= f););
+        // handle your precise timeout here.
+    } while ((f |= e) == 1);
+    return f;
 }
 
 positive_number factor(const positive_number number, void *memory) {
@@ -211,7 +211,7 @@ positive_number factor(const positive_number number, void *memory) {
     if (is_prime(number, e))
         return number;
     for(f = 0; f < 4; ++f) {
-        c = factor_rho(number, 1 << 22);
+        c = factor_rho(number, 1 << 16);
         if (c != number && c != 1)
             return c ;
     }
