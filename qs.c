@@ -210,8 +210,8 @@ positive_number factor(const positive_number number, void *memory) {
         return a ;
     if (is_prime(number, e))
         return number;
-    for(f = 0; f < 2; ++f) {
-        c = factor_rho(number, 1 << 18);
+    for(f = 13; f < 19; ++f) {
+        c = factor_rho(number, 1 << f);
         if (c != number && c != 1)
             return c ;
     }
