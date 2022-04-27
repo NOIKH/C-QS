@@ -11,14 +11,34 @@ This software is classified as a game, it's not well suited for professional use
 - Then it tries a ~ 3 seconds **Pollard Rho** factorization
 - Finally it tries a **Quadratic Sieve** factorization
 
-# factor
+# factor (positive_number, void *)
 
 **factor** function is expecting 2 arguments, a number to factor and 33 Megabyte of malloced memory.\
 **factor** function try to return to you one factor of the given number if it's not a prime.
-- You can convert a string to a 128-bit integer using the **from_string_128_bits** function.
-- You can print a 128-bit integer using the **to_string_128_bits** function (string must be freed after usage).
+It's presented in  `main.c`, which is a demo.
 
-This is presented in the `main.c` demo.
+# Basic use
+```c
+#include "qs.c"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void){
+    // allocate memory for the factorizer.
+    void * memory = malloc(1 << 25);
+    positive_number n = from_string_128_bits("108291528056611062333982283963");
+    while(n > 1 && !is_prime(n, 64))
+    {
+        positive_number res = factor(n, memory) ;
+        printf("%s ", to_string_128_bits(res));
+        n /= res ;
+    }
+    printf("%s", to_string_128_bits(n));
+    free(memory);
+}
+```
+Functions `from_string_128_bits` and `to_string_128_bits` are provided in `main.c`.
 
 # Example output
 ```c
