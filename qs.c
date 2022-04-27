@@ -202,21 +202,23 @@ positive_number factor(const positive_number number, void *memory) {
     smooth_number_t *x_squared, *smooth_numbers;
     char *M_1, *M_2, *T, *base_reset_fact;
     if (number < 4)
-        return number;
+        return number; // number isn't factorisable.
     for (b = number >> 1, a = (b + number / b) >> 1; a < b; b = a, a = (b + number / b) >> 1, ++e);
     b = number - a * a;
     if (b) ++a;
     else
-        return a ;
+        return a ; // number is a perfect square.
     if (is_prime(number, e))
-        return number;
+        return number; // number is prime.
     for(f = 10; f <= 18; ++f) {
         c = factor_rho(number, 1 << f);
         if (c != number && c != 1)
-            return c ;
+            return c ; // number is factored by rho.
     }
+    // begin quadratic sieve factorization.
     long double fp = logl((long double) number);
     d = 1 + (unsigned long) ceill(expl(sqrtl(fp * logl(fp)) / 2));
+    d >> 12 || (d = 1 << 12) ;
     m_roots = mem_straight(memory), mr_ptr = m_roots;
     for (l = 2; l < d; l += 1 + (l & 1))
         if (is_prime(l, 20) && mod_pow(number % l, (l - 1) >> 1, l) == 1) {
