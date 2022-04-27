@@ -67,7 +67,7 @@ int main(void){
             // generate a random number of ~ n_bits bits.
             for (size_t k = 0; k < sizeof(positive_number); ((char *) &n)[k++] = rand());
             n &= mask >> (8 * sizeof(positive_number) - n_bits); n += !(n & 1);
-            printf("%5d. (%2d bits) %40s = ", ++count, n_bits, to_string_128_bits(n));
+            printf("%5d. (%3d bits) %40s = ", ++count, n_bits, to_string_128_bits(n));
             fflush(stdout);
             // fill the "factors" array with the prime factors.
             exec(n, memory, factors);
