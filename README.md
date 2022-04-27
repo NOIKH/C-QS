@@ -7,9 +7,9 @@ The ~350 lines C software (integer factorization calculator) computes prime fact
 This software is classified as a game, it's not well suited for professional use, sure because it's not laboriously tested.
 
 # Algorithms in use
-- **Miller Rabin** primality check (first check)
-- **Pollard Rho** factorization (then try)
-- **Quadratic Sieve** factorization (finally)
+- **Miller Rabin** primality check *first check*
+- **Pollard Rho** factorization *then try*
+- **Quadratic Sieve** factorization *finally*
 
 # factor
 
