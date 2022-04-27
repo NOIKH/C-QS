@@ -8,7 +8,7 @@ This software is classified as a game, it's not well suited for professional use
 
 # Algorithms in use
 - First check is a **Miller Rabin** primality test
-- Then it tries a quick **Pollard Rho** factorization
+- Then it tries a ~ 3 seconds **Pollard Rho** factorization
 - Finally it tries a **Quadratic Sieve** factorization
 
 # factor
