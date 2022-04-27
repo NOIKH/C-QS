@@ -196,7 +196,7 @@ positive_number factor_rho(const positive_number n, const size_t scale) {
 
 positive_number factor(const positive_number number, void *memory) {
     positive_number a, b, c;
-    size_t step = 1 << 12, d, e = 8, f, g, h, i, j, k, l;
+    size_t step = 1 << 12, d, e = 16, f, g, h, i, j, k, l;
     cint r, s, t, u, v;
     unsigned long * m_roots, * mr_ptr ;
     smooth_number_t *x_squared, *smooth_numbers;
@@ -210,7 +210,7 @@ positive_number factor(const positive_number number, void *memory) {
         return a ;
     if (is_prime(number, e))
         return number;
-    for(f = 13; f < 19; ++f) {
+    for(f = 10; f <= 18; ++f) {
         c = factor_rho(number, 1 << f);
         if (c != number && c != 1)
             return c ;
