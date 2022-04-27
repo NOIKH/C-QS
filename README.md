@@ -29,7 +29,7 @@ int main(void){
     
     while(n > 1 && !is_prime(n, 64)) {
         positive_number res = factor(n, memory) ;
-        printf("%s ", to_string_128_bits(res));
+        printf("%s * ", to_string_128_bits(res));
         n /= res ;
     }
     printf("%s", to_string_128_bits(n));
