@@ -14,7 +14,7 @@ This software is classified as a game, it's not well suited for professional use
 # factor (positive_number, void *)
 
 **factor** function is expecting 2 arguments, a number to factor and 33 Megabyte of malloced memory.\
-**factor** function try to return to you one factor of the given number if it's not a prime.
+**factor** function try to return to you one factor of the given number if it's not a prime.\
 It's presented in  `main.c`, which is a demo.
 
 # Basic use
