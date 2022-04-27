@@ -21,15 +21,13 @@ It's presented in  `main.c`, which is a demo.
 ```c
 #include "qs.c"
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main(void){
-    // allocate memory for the factorizer.
     void * memory = malloc(1 << 25);
+    
     positive_number n = from_string_128_bits("108291528056611062333982283963");
-    while(n > 1 && !is_prime(n, 64))
-    {
+    
+    while(n > 1 && !is_prime(n, 64)) {
         positive_number res = factor(n, memory) ;
         printf("%s ", to_string_128_bits(res));
         n /= res ;
