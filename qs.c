@@ -196,7 +196,7 @@ positive_number factor_rho(const positive_number n, const size_t scale) {
 
 positive_number factor(const positive_number number, void *memory) {
     positive_number a, b, c; // the number 12 is a parameter to the quadratic sieve.
-    size_t step = 1 << 12, d, e = 16, f, g, h, i, j, k, l;
+    size_t step, d, e = 16, f, g, h, i, j, k, l;
     cint r, s, t, u, v;
     unsigned long * m_roots, * mr_ptr ;
     smooth_number_t *x_squared, *smooth_numbers;
@@ -218,7 +218,10 @@ positive_number factor(const positive_number number, void *memory) {
     // begin quadratic sieve factorization.
     long double fp = logl((long double) number);
     d = 1 + (unsigned long) ceill(expl(sqrtl(fp * logl(fp)) / 2));
-    d >> 13 || (d = 1 << 13) ; // the number 13 is a parameter to the quadratic sieve.
+    //
+    step = 1 << 12 ; // the number 12 is a parameter to the sieve.
+    d >> 13 || (d = 1 << 13) ; // the number 13 is a parameter to the sieve.
+    //
     m_roots = mem_straight(memory), mr_ptr = m_roots;
     for (l = 2; l < d; l += 1 + (l & 1))
         if (is_prime(l, 20) && mod_pow(number % l, (l - 1) >> 1, l) == 1) {
