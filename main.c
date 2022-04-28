@@ -20,9 +20,9 @@ positive_number * exec(positive_number n, void * memory, positive_number *array)
                 if (is_prime(n, 48)) // number of Miller-Rabin tests.
                     *array++ = n, n = 1;
                 else {
-                    a = factor(n, memory); // factor_worker can't be called with a prime.
-                    array = exec(a, memory, array);
-                    n /= a;
+                    a = factor(n, memory); // call the factor function.
+                    if (a == 1 || a == n) *array++ = n, n = 1;      // fail.
+                    else array = exec(a, memory, array), n /= a;    // success.
                 }
             }
         } else
@@ -62,7 +62,7 @@ int main(void){
     // allocate memory to store 128 factors.
     positive_number * factors = calloc(128, sizeof(positive_number)), n = 0, mask = -1;
     unsigned sr = (size_t)factors; sr = -sr / 1105; printf("srand at %u :\n\n", sr); srand(sr);
-    for (int wrapper = 80, count = 0; wrapper < 120; ++wrapper)
+    for (int wrapper = 16, count = 0; wrapper < 120; ++wrapper)
         for (int n_bits = wrapper, j; n_bits <= 125; ++n_bits) {
             // generate a random number of ~ n_bits bits.
             for (size_t k = 0; k < sizeof(positive_number); ((char *) &n)[k++] = rand());
