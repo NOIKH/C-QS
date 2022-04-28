@@ -196,7 +196,7 @@ positive_number factor_rho(const positive_number n, const size_t scale) {
 
 positive_number factor(const positive_number number, void *memory) {
     positive_number a, b, c; // the number 12 is a parameter to the quadratic sieve.
-    size_t step, d, e = 16, f, g, h, i, j, k, l;
+    size_t d, e = 16, f, g, h, i, j, k, l, m;
     cint r, s, t, u, v;
     unsigned long * m_roots, * mr_ptr ;
     smooth_number_t *x_squared, *smooth_numbers;
@@ -219,7 +219,7 @@ positive_number factor(const positive_number number, void *memory) {
     long double fp = logl((long double) number);
     d = 1 + (unsigned long) ceill(expl(sqrtl(fp * logl(fp)) / 2));
     //
-    step = 1 << 12 ; // the number 12 is a parameter to the sieve.
+    m = 1 << 12 ; // the number 12 is a parameter to the sieve.
     d >> 13 || (d = 1 << 13) ; // the number 13 is a parameter to the sieve.
     //
     m_roots = mem_straight(memory), mr_ptr = m_roots;
@@ -253,21 +253,21 @@ positive_number factor(const positive_number number, void *memory) {
         memset(M_1, 0, f + f);
         T = mem_straight(M_2 + f);
         x_squared = mem_straight(T + j);
-        smooth_numbers = mem_straight(x_squared + step);
+        smooth_numbers = mem_straight(x_squared + m);
         char *ptr = base_reset_fact = mem_straight(smooth_numbers + j);
         e = d + (32 - d) % 32;
-        l = e * step;
-        for (g = 0; g < step; x_squared[g].factors_vect = ptr, ptr += e, ++g);
+        l = e * m;
+        for (g = 0; g < m; x_squared[g].factors_vect = ptr, ptr += e, ++g);
         for (g = 0; g < j; smooth_numbers[g].factors_vect = ptr, ptr += e, ++g);
     }
     for (f = h = (size_t) a; k < j; f = h) {
-        for (e = 0; e < step; x_squared[e].values[1] = (x_squared[e].values[0] = h) * h - number, ++h, ++e);
+        for (e = 0; e < m; x_squared[e].values[1] = (x_squared[e].values[0] = h) * h - number, ++h, ++e);
         memset(base_reset_fact, 0, l);
         for (e = 0, g = 0, mr_ptr = m_roots; e < d; ++e, mr_ptr += 3)
             do {
                 b = f - *(mr_ptr + g);
                 b = (b / *(mr_ptr + 2) + (b % *(mr_ptr + 2) != 0)) * *(mr_ptr + 2) + *(mr_ptr + g) - f;
-                for (a = b; a < step; a += *(mr_ptr + 2)) {
+                for (a = b; a < m; a += *(mr_ptr + 2)) {
                     for (i = 0; !(x_squared[a].values[1] % *(mr_ptr + 2)); x_squared[a].values[1] /= *(mr_ptr + 2), ++i);
                     x_squared[a].factors_vect[e] = (char) (i & 1);
                     if (x_squared[a].values[1] == 1 && k < j) {
