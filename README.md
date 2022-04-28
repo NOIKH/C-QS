@@ -3,7 +3,7 @@ Quadratic Sieve C99 implementation using [128-bit GCC extension](https://gcc.gnu
 The source code is free and voluntarily obfuscated, if you want to appropriate the airy version you have to ask.
 
 # Description
-The ~350 lines C software (integer factorization calculator) computes prime factors of a natural number up to 127-bit.\
+The ~350 lines C integer factorization software computes prime factors of a natural number up to 127-bit.\
 This software is classified as a game, it's not well suited for professional use, sure because it's not laboriously tested.
 
 # Algorithms in use
