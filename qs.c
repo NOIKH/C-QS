@@ -188,7 +188,7 @@ positive_number factor_rho(const positive_number n, const size_t scale) {
             if (a >= scale) return n ;
             d = c, b <<= 1, a = 0;
         }
-        for (e = c, f = c, c = 0; f; f & 1 ? c = (c + e) % n : 0, e = (e << 1) % n, f >>= 1);
+        c = multiplication_modulo(c, c, n);
         for (++c, c *= c != n, e = n, f = c > d ? c - d : d - c; (f %= e) && (e %= f););
     } while ((f |= e) == 1);
     return f;
