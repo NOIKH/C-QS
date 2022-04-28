@@ -7,9 +7,11 @@ The ~350 lines C integer factorization software computes prime factors of a natu
 This software is classified as a game, it's not well suited for professional use, sure because it's not laboriously tested.
 
 # Algorithms in use
-- First check is a **Miller Rabin** primality test
+- First is tried a **Miller Rabin** primality test
 - Then is fired a ~ 3 seconds **Pollard Rho** factorization
 - Finally is fired a **Quadratic Sieve** factorization
+
+This combination is fast on average, there is no known infinite loop.
 
 # factor (positive_number, void *)
 
