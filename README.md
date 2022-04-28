@@ -67,8 +67,4 @@ You can download the files `qs.c` and `main.c` in the same directory then compil
 gcc -O3 -std=c99 -Wall -pedantic main.c -lm ;
 ./a.out ;
 ```
-Other possible usage after compilation :
-```sh
-./a.out 170141183460469231731687303715506697937 ;
-```
 Thank You.
