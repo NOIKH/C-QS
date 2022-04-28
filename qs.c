@@ -137,7 +137,7 @@ void cint_sqrt(const cint *number, cint *root) {
     }
 }
 
-static positive_number multiplication_modulo(positive_number a, positive_number b, positive_number mod) {
+static positive_number multiplication_modulo(positive_number a, positive_number b, const positive_number mod) {
     positive_number res = 0, tmp; // we avoid overflow in modular multiplication.
     for (b %= mod; a; a & 1 ? b >= mod - res ? res -= mod : 0, res += b : 0, a >>= 1, (tmp = b) >= mod - b ? tmp -= mod : 0, b += tmp);
     return res % mod;
