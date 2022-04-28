@@ -11,7 +11,7 @@ This software is classified as a game, it's not well suited for professional use
 - Then is fired a ~ 3 seconds **Pollard Rho** factorization
 - Finally is fired a **Quadratic Sieve** factorization
 
-This combination of 3 algorithms is fast on average, there is no known infinite loop.
+This combination of 3 algorithms is fast on average, there is no known infinite loop in the factor `qs.c` file.
 
 # factor (positive_number, void *)
 
