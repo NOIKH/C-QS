@@ -15,7 +15,7 @@ This software is classified as a game, it's not well suited for professional use
 
 **factor** function is expecting 2 arguments, a number to factor and 33 Megabyte of malloced memory.\
 **factor** function try to return to you one factor of the given number if it's not a prime.\
-It's presented in  `main.c`, which is a demo.
+The function is presented in  `main.c`, which is a demo.
 
 # Basic use
 ```c
@@ -29,7 +29,7 @@ int main(void){
     
     while(n > 1 && !is_prime(n, 64)) {
         positive_number res = factor(n, memory) ;
-        printf("%s * ", to_string_128_bits(res));
+        printf("%s * ", to_string_128_bits(res)); fflush(stdout);
         n /= res ;
     }
     printf("%s", to_string_128_bits(n));
