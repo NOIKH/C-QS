@@ -17,7 +17,7 @@ This combination of 3 algorithms is fast on average, the factor function has no 
 
 **factor** function is expecting 2 arguments : a number to factor + 64 MB of malloced memory.\
 **factor** function is intended to return to you **1**, **N** or a factor of the given number.\
-The function is presented in  `main.c`, which is a demo.
+The **factor** function is presented in  `main.c`, which is a demo.
 
 # Basic use
 ```c
