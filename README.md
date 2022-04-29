@@ -15,8 +15,8 @@ This combination of 3 algorithms is fast on average, the factor function has no 
 
 # factor (positive_number, void *)
 
-**factor** function is expecting 2 arguments, a number to factor and 64 MB of malloced memory.\
-**factor** function try to return to you one factor of the given number if it's not a prime.\
+**factor** function is expecting 2 arguments : a number to factor + 64 MB of malloced memory.\
+**factor** function is intended to return to you **1**, **N** or one factor of the given number.\
 The function is presented in  `main.c`, which is a demo.
 
 # Basic use
