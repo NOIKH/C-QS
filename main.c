@@ -4,7 +4,7 @@
 #include <string.h>
 #include <assert.h>
 
-// fill the given array with prime factors of n, result will be zero terminated.
+// fill the given array with prime factors of n, result will be zero terminated (convenience function).
 positive_number * exec(positive_number n, void * memory, positive_number *array) {
     positive_number a, b; size_t s ;
     do  if (n < 4)
